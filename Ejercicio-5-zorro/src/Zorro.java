@@ -5,10 +5,10 @@ public class Zorro {
     private ArrayList<Alimento> alimentosComidos;
     private int energia;
 
-    public Zorro(String nombre, int energia) {
+    public Zorro(String nombre) {
         this.nombre = nombre;
         this.alimentosComidos = new ArrayList<Alimento>(0);
-        this.energia = energia;
+        this.energia = 0;
     }
 
     public String getNombre() {
@@ -35,7 +35,12 @@ public class Zorro {
         this.energia = energia;
     }
 
-    public  void comerAlimentos(){
+    public  void comerAlimentos(Alimento alimentos,Gallinero gallinero){
+    getAlimentosComidos().add(alimentos);
+    gallinero.removerComidaAlGallinero(alimentos);
+    this.energia= energia +alimentos.getEnergía();
+    System.out.println(getNombre()+" se comia a el alimento " + alimentos.getNombre());
+    System.out.println(getNombre()+" adquirio " + this.getEnergia() +"% de energia");
 
     }
 }
