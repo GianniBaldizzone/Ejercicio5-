@@ -6,6 +6,14 @@ public class Materia {
     private Docente docente;
     private Boolean tieneCorrelativa;
 
+    public String getHorario() {
+        return horario;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
+    }
+
     private String horario;
 
     public Materia(String nombre, String turno, Docente docente, Boolean tieneCorrelativa, String horario) {

@@ -1,18 +1,19 @@
+import java.util.ArrayList;
+
 public class Alumno {
     private String nombre;
     private String apellido;
     private String dni;
     private String numeroMatricula;
-    private Materia materia;
+    private ArrayList<Materia> materias;
 
 
-
-    public Materia getMateria() {
-        return materia;
+    public ArrayList<Materia> getMaterias() {
+        return materias;
     }
 
-    public void setMateria(Materia materia) {
-        this.materia = materia;
+    public void setMaterias(ArrayList<Materia> materias) {
+        this.materias = materias;
     }
 
     public Alumno(String nombre, String apellido, String dni, String numeroMatricula) {
@@ -20,6 +21,7 @@ public class Alumno {
         this.apellido = apellido;
         this.dni = dni;
         this.numeroMatricula = numeroMatricula;
+        this.materias = new ArrayList<Materia>(0);
     }
 
     public String getNombre() {
@@ -58,10 +60,9 @@ public class Alumno {
        materia.mostrarDatos();
    }
     public void anotarseMateria(Alumno yo, Materia materiaParaAnotarse){
+            getMaterias().add(materiaParaAnotarse);
+            System.out.println(this.nombre + " se anoto correctamente a la materia "+ materiaParaAnotarse.getNombre());
+            System.out.println(getMaterias());}
 
-       if (this)
-        this.setMateria(materiaParaAnotarse);
-    System.out.println(this.nombre + " se anoto correctamente a la materia "+ this.getMateria().getNombre());
-
-    }
 }
+
